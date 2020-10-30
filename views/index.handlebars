@@ -1,0 +1,11 @@
+<h1>EAT! DA! BURGER!</h1>
+
+<h2>Burgers to eat</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burgers-block sleep=true}}
+    {{/unless}}
+  {{/each}}
+</ul>
