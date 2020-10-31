@@ -1,0 +1,37 @@
+body {
+  background-color: lightyellow;
+}
+li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+  background: aqua;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+img {
+  width: 200px;
+}
+
+.floatLeft { 
+  width: 50%; float: left; 
+}
+
+.floatRight {
+  width: 50%; float: right; 
+}
+
+.container {
+  overflow: hidden; 
+}
