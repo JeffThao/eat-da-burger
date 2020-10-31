@@ -1,10 +1,11 @@
 $(function() {
   $(".change-devour").on("click", function(event) {
+    console.log("works");
     let id = $(this).data("id");
-    let newDevoured = $(this).data("1");
+    let newDevoured = $(this).data("devoured");
 
     let newDevouredState = {
-      devoured: newDevoured
+      devoured: 1
     };
 
     $.ajax("/api/burgers/" + id, {

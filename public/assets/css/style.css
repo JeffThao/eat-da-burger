@@ -1,6 +1,11 @@
 body {
   background-color: lightyellow;
 }
+
+.container {
+padding: 10px;
+}
+
 li {
   padding: 5px;
   margin: 5px;
