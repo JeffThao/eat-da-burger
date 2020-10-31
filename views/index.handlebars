@@ -1,11 +1,40 @@
-<h1>EAT! DA! BURGER!</h1>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <img src="../public/assets/image/burgers.jpg" alt="BURGERS!!">
+  </div>
+</div>
+<div class="container">
+  <h1>EAT! DA! BURGER!</h1>
 
-<h2>Burgers to eat</h2>
+  <h2>Burgers to eat</h2>
 
-<ul>
-  {{#each burgers}}
+  <ul>
+    {{#each burgers}}
     {{#unless devoured}}
-      {{> burgers/burgers-block sleep=true}}
+    {{> burgers/burgers-block devoured=true}}
     {{/unless}}
-  {{/each}}
-</ul>
+    {{/each}}
+  </ul>
+
+  <h2>Burgers I already ate</h2>
+
+  <ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burgers-block devoured=false}}
+    {{/if}}
+    {{/each}}
+  </ul>
+
+  <h2>Add a Burger</h2>
+  <form class="create-form">
+
+    <div class="form-group">
+      <label for="burgerName">Burger Name:</label>
+      <input type="text" id="burgerName" data-devoured="0" name="name">
+    </div>
+
+    <button class="btn btn-primary" type="submit">Add Burger</button>
+  </form>
+
+</div>
