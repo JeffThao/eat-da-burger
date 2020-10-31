@@ -5,37 +5,42 @@
 </div>
 <div class="container">
   <div class="row">
-  <h1>EAT! DA! BURGER!</h1>
+    <div class="col-12">
+      <h1 class="centered">EAT! DA! BURGER!</h1>
+    </div>
+    <div class="col-4">
+      <h2 class="centered">Can't wait to eat!</h2>
 
-  <h2>Burgers to eat</h2>
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burgers-block devoured=true}}
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
 
-  <ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    {{> burgers/burgers-block devoured=true}}
-    {{/unless}}
-    {{/each}}
-  </ul>
+    <div class="col-4">
+      <h2>Yummy in my Tummy</h2>
 
-  <h2>Burgers I already ate</h2>
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        {{> burgers/burgers-block devoured=false}}
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
 
-  <ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    {{> burgers/burgers-block devoured=false}}
-    {{/if}}
-    {{/each}}
-  </ul>
-</div>
-  <h2>Add a Burger</h2>
   <form class="create-form">
-
+    <h2>Add a Burger</h2>
     <div class="form-group">
       <label for="burgerName">Burger Name:</label>
       <input type="text" id="burgerName" data-devoured="0" name="name">
     </div>
 
-    <button class="btn btn-primary" type="submit">Add Burger</button>
+    <button class="myButton" type="submit">Add Burger</button>
   </form>
-  
+
 </div>
